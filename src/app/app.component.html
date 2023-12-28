@@ -1,0 +1,88 @@
+<!-- <h2>{{ num }}</h2>
+<h3>{{ text }}</h3>
+<button (click)="add()">Add</button> -->
+
+<!-- <input type="number" [(ngModel)] = "x"> -->
+<!-- <input type="number" [(ngModel)] = "y"> -->
+<!-- <input type="number" [(ngModel)] = "z"> -->
+
+<!-- <div>{{ avg }}</div>
+<button (click)="printAvg()">Print</button> -->
+
+<table style="border: 1px solid black;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productsList">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.categoryId}}</td>
+      </tr>
+    </tbody>
+</table>
+
+  <table style="border: 1px solid black;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categoriesList">
+        <td>{{category.id}}</td>
+        <td>{{category.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table style="border: 1px solid black;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Product ID</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rate of productRatesList">
+        <td>{{rate.id}}</td>
+        <td>{{rate.productId}}</td>
+        <td>{{rate.rate}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <input type="text" [(ngModel)]="searchText">
+
+  <table style="border: 1px solid black;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category ID</th>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Rate</th>
+        <th>Rate Avg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of getProductViewDto()">
+        <td>{{product.id}}</td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.productId}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.productPrice | currency:'TRY':'₺':'1.2-2'}}</td>
+        <td>{{product.productRate | number:'1.2-2'}}</td>
+        <td>{{product.rateAvg | number:'1.2-2'}}</td>
+      </tr>
+    </tbody>
+   </table>
